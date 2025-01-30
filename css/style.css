@@ -121,6 +121,14 @@ small {
   font-size: 0.875em;
 }
 
+/* 
+смотреть инструкцию в файле
+scss/functions/_rem.scss
+*/
+/* 
+смотреть инструкцию в файле
+scss/functions/_adaptiveValues.scss
+*/
 html,
 body {
   height: 100%;
@@ -159,6 +167,75 @@ body {
   box-sizing: content-box;
 }
 
+/*
+.header{
+	&__container{
+
+	}
+}
+*/
+/*
+.icon-menu{
+	display: none;
+	@media only screen and (max-width: 766.98px) {
+		display: block;
+		position: relative;
+		//т.к. бургер это flex элемент, то надо указывать ширину так, а не через width и тогда бургер при уменьшении экрана не будет сужаться
+		flex: 0 0 30px; 
+		//width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after{
+			content: "";
+			transition:  all .3s ease 0s;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #fff;
+		}
+		&::before{
+			top: 0;
+		}
+		&::after{
+			bottom: 0px;
+		}
+		span{
+			top: calc(50% - 1px);
+		}
+		&.menu-open{//из бургера делается крестик
+			span{
+				transform: scale(0);
+			}
+			&::before{
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after{
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+		&:hover{
+			span,
+			&::before,
+			&::after{
+				background-color: #942424;
+			}
+		}
+	}
+}
+*/
+/*
+.main{
+	&__container{
+
+	}
+}
+*/
 .footer {
   height: 2.25rem;
 }
@@ -175,4 +252,48 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 766.98px) {
+  /*
+  	body{
+  		&.lock{
+  			overflow: hidden;
+  		}
+  	}
+  	.top-header__container{
+  		position: relative;
+  	}
+  	.top-header{
+  		padding: 0;
+  	}
+  	.menu{
+  		position: absolute;
+  		top: rem(50);
+  		left: -100%;
+  		width: 100%;
+  		height: 100vh;
+  		overflow: auto; //если в меню (к примеру) пунктов больше, чтобы можно доскроллить до последнего пункта (ведь у body скролл скрыт)
+  		background-color: #ccc999;
+  		transition: all .3s ease 0s;
+  		&__link{
+  			color: $colorFont;
+  		}
+  		&__list{
+  			flex-direction: column;
+  		}
+  		&.menu-open{
+  			left: 0;
+  		}
+  	}
+  	.icon-menu{
+  		margin-left: auto; // прижать бургер вправо
+  	}
+  	.page{
+  		&__content{
+  			margin-top: rem(60);
+  			font-size: rem(14);
+  		}
+  	}
+  */
 }
